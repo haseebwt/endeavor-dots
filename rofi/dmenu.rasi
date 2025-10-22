@@ -1,0 +1,52 @@
+* {
+    font:            "hack nerd font mono 14";
+}
+window {
+    anchor:     north;
+    location:   center;
+    width:      30%;
+    height: 	12%;
+    padding:    6px;
+    children:   [ prompt, horibox ];
+
+    border-radius: 20px;
+}
+horibox {
+    orientation: horizontal;
+    children:   [ listview ];
+}
+listview {
+    layout:     horizontal;
+    spacing:    5px;
+    lines:      2;
+    padding: 4px;
+}
+entry {
+    // enabled: false;
+    expand:     false;
+    width:      10em;
+}
+
+prompt {
+
+    padding: 	10px 0 10 200px;
+    
+}
+
+element {
+    // margin: 22px;
+    padding: 2px;
+    width: 14%;
+    border-radius: 10px;
+    align: center;
+}
+element selected {
+    background-color: SteelBlue;
+}
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color: inherit;
+    horizontal-align: 0.5;
+}
+

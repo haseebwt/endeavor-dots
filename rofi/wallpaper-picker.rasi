@@ -1,0 +1,95 @@
+/**
+ * ROFI Documentation theme.
+ * User: Qball
+ * Copyright: Dave Davenport
+ */
+
+/** Default settings, every widget inherits from this. */
+* {
+    /** Default background color is transparent. */
+    background-color: transparent;
+
+    /** Default text is white */
+    text-color:       white;
+}
+
+inputbar {
+    padding:    8px 8px;
+    spacing:    8px;
+    children:   [ prompt, entry ];
+}
+/**
+ * Main window widget
+ */
+window {
+    /** Place on top center of rofi window on the top center of the screen. */
+
+    location: south;
+    anchor: center;
+
+    /** 100% screen width */
+    width:            50%;
+    height:	      34%;
+
+    y-offset: 0px;
+    background-color: #23120c;
+
+    border: 4px;
+    border-color: rgba(155, 57, 21, 0.5);
+    border-radius: 28px;
+
+    /** Small one 1 font width border on inside of window. */
+    padding:           1em;
+}
+
+/**
+ * Main container in the window.
+ */
+
+/**
+ * listview that shows entries.
+ */
+listview {
+    /** 4 rows. */
+    lines: 1;
+    /** 6 columns */
+    columns: 4;
+    /** add 1 em spacing between items */
+    spacing: 1em;
+    /** Don't reduce columns if less items are available. */
+    fixed-columns: true;
+}
+/**
+ * entry in listview.
+ */
+element {
+
+    /** clients are packed vertically. */
+    orientation:      vertical;
+
+    cursor: pointer;
+
+}
+
+/** selected element */
+element selected {
+    border: 1px;
+    border-radius: 10px;
+    border-color: #deadea;
+}
+
+/** Entry icon */
+element-icon {
+    /** change size to 128 pixels. */
+    size: 12.56ch;
+    cursor: inherit;
+}
+
+/** Entry text */
+element-text {
+    /* align font in (horizontally) center */
+    horizontal-align: 0.5;
+    cursor: inherit;
+
+    font:   "DejaVu Sans Mono 10";
+}

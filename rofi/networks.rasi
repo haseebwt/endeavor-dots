@@ -1,0 +1,5 @@
+configuration {
+	font: "hack nerd font mono 16";
+	show-icons: true;
+}
+@theme "./hello.rasi"

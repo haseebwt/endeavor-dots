@@ -1,0 +1,260 @@
+// -*- mode: jsonc -*-
+{
+	// "layer": "top", // Waybar at top layer
+	// "position": "bottom", // Waybar position (top|bottom|left|right)
+	"height": 30, // Waybar height (to be removed for auto height)
+	// "width": 1280, // Waybar width
+	"spacing": 1, // Gaps between modules (4px)
+	// Choose the order of the modules
+	"modules-left": [
+		"clock",
+		"mpd",
+		"tray"
+	],
+	"modules-center": [
+		"hyprland/workspaces"
+	],
+	"modules-right": [
+		"hyprland/window",
+		"group/util",
+		"network",
+		"memory",
+		"custom/media",
+		"custom/notification",
+		"custom/power"
+	],
+	// Modules configuration
+	"group/hardware": {
+		"orientation": "inherit",
+		"modules": [
+			"cpu",
+			"memory",
+			"temperature"
+		]
+	},
+	"group/blurg": {
+		"orientation": "inherit",
+		"modules": [
+			"backlight",
+			"memory"
+		]
+	},
+	"group/util": {
+		"orientation": "inherit",
+		"modules": [
+			"pulseaudio",
+			"backlight"
+		]
+	},
+	"hyprland/window": {
+		"format": "{class}",
+		"rewrite": {
+			"(.*) — Mozilla Firefox": "   — $1",
+			"(.*)firefox": ""
+		},
+		"seperate-outputs": true
+	},
+	"hyprland/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": true,
+		//     "warp-on-scroll": false,
+		"format": "{icon}",
+		"format-icons": {
+			"1": "Term", // "",
+			"2": "Web", // "",
+			"3": "Prod", // "",
+			"4": "Extra", // "",
+			"5": "Extra", // ""
+			"6": "Extra", // "",
+			"7": "Extra", // "",
+			"8": "Extra", // "",
+			"9": "Extra", // "",
+			"10": "Bckgrnd"
+			// "urgent": "•",
+			// //	     "active": "<i class='fa-solid fa-minus'></i>",
+			// "active": "━━",
+			// "default": "•"
+		},
+		"persistent-workspaces": {
+			"*": 3 // 5 workspaces by default on every monitor
+		}
+	},
+	"tray": {
+		"icon-size": 20,
+		"spacing": 10
+		// "icons": {
+		//     "blueman": "bluetooth",
+		//     "discord": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+		// }
+	},
+	"mpd": {
+		"tooltip": false,
+		"format": "{stateIcon}  {artist} - {title}",
+		"format-alt": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon} / {volume}%",
+		"format-disconnected": "Disconnected  ",
+		"format-stopped": "Stopped  ",
+		"unknown-tag": "N/A",
+		"interval": 5,
+		"consume-icons": {
+			"on": " "
+		},
+		"random-icons": {
+			"off": "<span color=\"#f53c3c\"></span> ",
+			"on": " "
+		},
+		"repeat-icons": {
+			"on": " "
+		},
+		"single-icons": {
+			"on": "1 "
+		},
+		"state-icons": {
+			"paused": "",
+			"playing": ""
+		}
+	},
+	"clock": {
+		"timezone": "Asia/Karachi",
+		"format": "󱑕   {:%I:%M %p}",
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		"format-alt": "  {:%d-%m-%Y}"
+	},
+	"cpu": {
+		"format": "   {usage}%",
+		"tooltip": false
+	},
+	"memory": {
+		"format": "  {used}/{total} GiB",
+		"tooltip": false
+	},
+	"temperature": {
+		// "thermal-zone": 2,
+		// "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+		"critical-threshold": 80,
+		"tooltip": false,
+		// "format-critical": "{temperatureC}°C {icon}",
+		"format": "{icon}  {temperatureC}°C",
+		"format-icons": [
+			"",
+			"",
+			""
+		]
+	},
+	"backlight": {
+		// "device": "acpi_video1",
+		"format": "{icon}",
+		"tooltip": false,
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			""
+		]
+	},
+	"battery": {
+		"states": {
+			// "good": 95,
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{capacity}% {icon}",
+		"format-full": "{capacity}% {icon}",
+		"format-charging": "{capacity}% ",
+		"format-plugged": "{capacity}% ",
+		"format-alt": "{time} {icon}",
+		// "format-good": "", // An empty format will hide the module
+		// "format-full": "",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		]
+	},
+	"battery#bat2": {
+		"bat": "BAT2"
+	},
+	"network": {
+		// "interface": "wlp2*", // (Optional) To force the use of this interface
+		"format-alt": "    {essid}",
+		"format-wifi": "  {bandwidthUpBytes}    {bandwidthDownBytes}",
+		"format-ethernet": "{ipaddr}/{cidr} ",
+		"tooltip": false,
+		"format-linked": "{ifname} (No IP) ",
+		"format-disconnected": "Disconnected ⚠"
+	},
+	"pulseaudio": {
+		// "scroll-step": 1, // %, can be a float
+		"format": "{icon}",
+		"tooltip-format": "{volume}%",
+		"format-bluetooth": "{volume}% {icon} {format_source}",
+		"format-bluetooth-muted": " {icon} {format_source}",
+		"format-muted": "",
+		"format-source": "{volume}% ",
+		"format-source-muted": "",
+		// "format-alt": "{format_source}",
+		"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": [
+				"",
+				"",
+				""
+			]
+		}
+	},
+	"custom/media": {
+		"format": "{icon} {text}",
+		"return-type": "json",
+		"max-length": 40,
+		"format-icons": {
+			"spotify": "",
+			"default": "🎜"
+		},
+		"escape": true,
+		"exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+		// "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+	},
+	"custom/power": {
+		"format": "",
+		"tooltip": false,
+		"menu": "on-click",
+		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+		"menu-actions": {
+			"shutdown": "shutdown now",
+			"reboot": "reboot",
+			"suspend": "systemctl suspend; hyprlock"
+		}
+	},
+	"custom/notification": {
+		"tooltip": false,
+		"format": "{icon}",
+		"format-icons": {
+			"notification": "󰂞",
+			"none": "",
+			"dnd-notification": "󰂝",
+			"dnd-none": "󱏧",
+			"inhibited-notification": "<U+F0A2><span foreground='red'><sup><U+F444></sup></span>",
+			"inhibited-none": "<U+F0A2>",
+			"dnd-inhibited-notification": "<U+F1F7><span foreground='red'><sup><U+F444></sup></span>",
+			"dnd-inhibited-none": "<U+F1F7>"
+		},
+		"return-type": "json",
+		"exec-if": "which swaync-client",
+		"exec": "swaync-client -swb",
+		"on-click": "swaync-client -t -sw",
+		"on-click-right": "swaync-client -d -sw",
+		"escape": true
+	}
+}
