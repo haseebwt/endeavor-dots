@@ -1,0 +1,253 @@
+* {
+	/* `otf-font-awesome` is required to be installed for icons */
+	font-family: "Noto Sans", "DejaVuSansM Nerd Font", "Mononoki Nerd Font Propo", Arial, Roboto, Helvetica, sans-serif;
+	font-size: 18px;
+}
+
+window#waybar {
+	background-color: #23120c;
+	padding: 8px 10px;
+	color: #fcfbe0;
+	transition-property: background-color;
+	transition-duration: .5s;
+}
+
+window#waybar.hidden {
+	opacity: 0.2;
+}
+
+/* you can set a style on hover for any module like this */
+#workspaces button {
+	padding: 0 4px;
+	background-color: transparent;
+	color: #ffecd9;
+}
+
+#workspaces button:hover {
+	background: rgba(155, 57, 21, 0.2);
+	background-color: rgba(155, 57, 21, 0.2);
+	border: 1px solid rgba(155, 57, 21, 0.2);
+}
+
+#workspaces button.focused {
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px inset;
+	padding: 0 8px;
+	color: #9b3915;
+	background-color: #2d1e19;
+	font-weight: bold;
+}
+
+
+#workspaces button.urgent {
+	background-color: #633c2d;
+	font-weight: bold;
+}
+
+#clock,
+#memory,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#util,
+#custom-notification,
+#custom-updates,
+#custom-recording,
+#tray {
+	font-family: Mononoki;
+	font-size: 17px;
+	background-color: rgba(107, 44, 23, 0.4);
+	padding: 0 8px;
+	color: #ffecd9;
+	font-weight: 600;
+	border-radius: 10px;
+}
+
+#custom-power {
+	padding: 0 14px 0 8px;
+}
+
+#util {
+	padding: 0 0px;
+}
+
+#window {
+	font-size: 2px;
+	padding: 0 8px;
+	font-weight: 600;
+	background-color: rgba(107, 44, 23, 0.4);
+	color: #ffecd9;
+	border-radius: 10px;
+}
+
+window#waybar.empty #window {
+	background-color: transparent;
+}
+
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left>widget:first-child>#workspaces {
+	margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right>widget:last-child>#workspaces {
+	margin-right: 0;
+}
+
+#clock {
+	border-radius: 10px;
+}
+
+#battery {
+	color: #000000;
+	border-radius: 10px;
+}
+
+#battery.charging,
+#battery.plugged {
+	color: #ffffff;
+	background-color: #26A65B;
+	border-radius: 10px;
+}
+
+@keyframes blink {
+	to {
+		background-color: #ffffff;
+		color: #000000;
+	}
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+	background-color: #f53c3c;
+	color: #ffffff;
+	animation-name: blink;
+	animation-duration: 0.5s;
+	animation-timing-function: steps(12);
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	border-radius: 10px;
+}
+
+label:focus {
+	background-color: #000000;
+}
+
+#memory {
+	border-radius: 10px;
+}
+
+#backlight {
+	padding-left: 20px;
+	background-color: transparent;
+}
+
+#network {
+	border-radius: 10px;
+}
+
+
+#network.disconnected {
+	color: #fca9a9;
+	border-radius: 10px;
+}
+
+#pulseaudio {
+	background-color: transparent;
+	padding-right: 0px;
+}
+
+#pulseaudio.muted {
+	padding-right: 0px;
+	color: #fca9a9;
+}
+
+#custom-media {
+	background-color: #66cc99;
+	color: #2a5c45;
+	min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+	background-color: #66cc99;
+}
+
+#custom-media.custom-vlc {
+	background-color: #ffa000;
+}
+
+#mpd {
+	font-size: 16px;
+	color: #ffecd9;
+	background-color: rgba(107, 44, 23, 0.4);
+	padding: 0 8px;
+	border-radius: 10px;
+	font-weight: 600;
+}
+
+#mpd.disconnected {}
+
+#mpd.stopped {
+	color: #fca9a9;
+	padding: 0 2px 0 8px;
+}
+
+#mpd.paused {
+	color: #9b5c42;
+}
+
+#scratchpad {
+	background: rgb(0, 0, 0);
+}
+
+#scratchpad.empty {
+	background-color: transparent;
+}
+
+#tray {
+	font-size: 8px;
+	font-weight: 400;
+}
+
+#tray>.passive {
+	-gtk-icon-effect: dim;
+}
+
+#tray>.needs-attention {
+	-gtk-icon-effect: highlight;
+	background-color: #fca9a9;
+}
+
+#custom-notification {
+	padding-right: 12px;
+	font-size: 20px;
+}
+
+#custom-notification.none {
+	background-color: transparent;
+	padding-right: 0px;
+	font-size: 0px;
+}
+
+@keyframes blinking {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+#custom-recording {
+	font-size: 16px;
+	padding-left: 10px;
+	padding-right: 12px;
+	color: red;
+	animation: blinking 2s infinite;
+}

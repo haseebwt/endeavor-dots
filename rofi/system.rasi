@@ -1,0 +1,11 @@
+configuration {
+
+	kb-row-up: "Control+k,Up,Control+p";
+	kb-row-down: "Control+j,Down,Control+n";
+
+	kb-accept-entry: "Control+m,Return,KP_Enter";
+	kb-remove-to-eol: "";
+}
+
+@theme './theme.rasi'
+@import './dmenu.rasi'

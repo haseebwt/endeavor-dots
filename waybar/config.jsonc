@@ -1,0 +1,214 @@
+// -*- mode: jsonc -*-
+{
+	// "layer": "top", // Waybar at top layer
+	// "position": "bottom", // Waybar position (top|bottom|left|right)
+	"height": 30, // Waybar height (to be removed for auto height)
+	// "width": 1280, // Waybar width
+	"spacing": 1, // Gaps between modules (4px)
+	// Choose the order of the modules
+	"modules-left": [
+		"clock",
+		"mpd",
+		"tray",
+		"custom/updates",
+		"custom/recording"
+	],
+	"modules-center": [
+		"sway/workspaces"
+	],
+	"modules-right": [
+		"sway/window",
+		"group/util",
+		"network",
+		"memory",
+		"custom/notification"
+	],
+	// Modules configuration
+	"group/util": {
+		"orientation": "inherit",
+		"modules": [
+			"pulseaudio",
+			"backlight"
+		]
+	},
+	"sway/window": {
+		"format": "{app_id}",
+		"rewrite": {
+			"(.*)librewolf": "",
+			"(.*)kitty": "󰄛",
+			"(.*)discord": "󰍡"
+		},
+		"seperate-outputs": true
+	},
+	"sway/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": true,
+		//     "warp-on-scroll": false,
+		"format": "{icon}",
+		"format-icons": {
+			"1": "Term", // "",
+			"2": "Web", // "",
+			"3": "Prod", // "",
+			"4": "Extra", // "",
+			"5": "Extra", // ""
+			"6": "Extra", // "",
+			"7": "Extra", // "",
+			"8": "Extra", // "",
+			"9": "Extra", // "",
+			"10": "Bckgrnd"
+		},
+		"persistent-workspaces": {
+			"1": [],
+			"2": [],
+			"3": []
+		}
+	},
+	"mpd": {
+		"tooltip": false,
+		"format": "{stateIcon}  {artist} - {title}",
+		"format-alt": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon} / {volume}%",
+		"format-disconnected": "Disconnected  ",
+		"format-stopped": "Stopped  ",
+		"unknown-tag": "N/A",
+		"interval": 5,
+		"consume-icons": {
+			"on": " "
+		},
+		"random-icons": {
+			"off": "<span color=\"#f53c3c\"></span> ",
+			"on": " "
+		},
+		"repeat-icons": {
+			"on": " "
+		},
+		"single-icons": {
+			"on": "1 "
+		},
+		"state-icons": {
+			"paused": "",
+			"playing": ""
+		}
+	},
+	"clock": {
+		"timezone": "Asia/Karachi",
+		"format": "󱑕   {:%I:%M %p}",
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		"format-alt": "  {:%d-%m-%Y}"
+	},
+	"memory": {
+		"format": "  {used} GiB",
+		"tooltip": false
+	},
+	"backlight": {
+		// "device": "acpi_video1",
+		"format": "{icon}",
+		"tooltip": false,
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			""
+		]
+	},
+	"battery": {
+		"states": {
+			// "good": 95,
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{capacity}% {icon}",
+		"format-full": "{capacity}% {icon}",
+		"format-charging": "{capacity}% ",
+		"format-plugged": "{capacity}% ",
+		"format-alt": "{time} {icon}",
+		// "format-good": "", // An empty format will hide the module
+		// "format-full": "",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		]
+	},
+	"battery#bat2": {
+		"bat": "BAT2"
+	},
+	"network": {
+		// "interface": "wlp2*", // (Optional) To force the use of this interface
+		"format-alt": "    {essid}",
+		"format-wifi": "  {bandwidthDownBytes}",
+		"format-ethernet": "{ipaddr}/{cidr} ",
+		"tooltip": false,
+		"format-linked": "{ifname} (No IP) ",
+		"format-disconnected": "Disconnected ⚠",
+		"interval": 2
+	},
+	"pulseaudio": {
+		// "scroll-step": 1, // %, can be a float
+		"format": "{icon}",
+		"tooltip-format": "{volume}%",
+		"format-bluetooth": "{volume}% {icon} {format_source}",
+		"format-bluetooth-muted": " {icon} {format_source}",
+		"format-muted": "",
+		"format-source": "{volume}% ",
+		"format-source-muted": "",
+		"format-alt": "{format_source}",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": [
+				"",
+				"",
+				""
+			]
+		}
+	},
+	"tray": {
+		"icon-size": 20,
+		"spacing": 10
+	},
+	"custom/notification": {
+		"tooltip": false,
+		"format": "{0}  {icon}",
+		"format-icons": {
+			"notification": "󱅫",
+			"none": "",
+			"dnd-notification": "󰂝",
+			"dnd-none": "󱏧",
+			"inhibited-notification": "<U+F0A2><span foreground='red'><sup><U+F444></sup></span>",
+			"inhibited-none": "<U+F0A2>",
+			"dnd-inhibited-notification": "<U+F1F7><span foreground='red'><sup><U+F444></sup></span>",
+			"dnd-inhibited-none": "<U+F1F7>"
+		},
+		"return-type": "json",
+		"exec-if": "which swaync-client",
+		"exec": "swaync-client -swb",
+		"on-click": "swaync-client -t -sw",
+		"on-click-right": "swaync-client -d -sw",
+		"hide-empty-text": true,
+		"escape": true
+	},
+	"custom/updates": {
+		"tooltip": false,
+		"format": "{}  ",
+		"exec": "wc -l < /tmp/upgradable.txt",
+		"on-click": "$HOME/.config/scripts/checkupdates.sh",
+		"interval": 3600
+	},
+	"custom/recording": {
+		"exec": "cat /tmp/RECORDING",
+		"format": "",
+		"interval": "once",
+		"signal": 8
+	}
+}

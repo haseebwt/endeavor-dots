@@ -1,0 +1,1 @@
+To use one of the the themes, just rename the files to `config.jsonc` and `style.css`

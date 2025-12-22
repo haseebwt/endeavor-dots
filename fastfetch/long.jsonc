@@ -1,0 +1,120 @@
+
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+    	"source": "~/Pictures/Wallpapers/Maris_Willem_Ducks.jpg",
+    	"type": "kitty",
+    	"height": 10,
+    	"padding": {
+    		"top": 4
+    	}
+    },
+    "display": {
+        "separator": " ",
+	"color": {
+	    // "output": "38;2;246;244;221", // beige
+	    "output": "38;2;242;186;162", // hot pink
+	    "keys": "38;2;135;5;124" // magenta
+	}
+    },
+    "modules": [
+	"break",
+        "break",
+        "break",
+	{
+            "type": "custom",
+            "format": "\u001b[38;2;244;220;221m₊˚๑ ✧ \u001b[38;2;249;123;69mkavya 󰧲"
+	    // "format": "₊˚๑ ✧ kavya 󰧲",
+	    // "outputColor":"38;2;249;123;69"
+
+        },
+	"break",
+
+	{
+            "type": "custom",
+            "format": "╭‧꒰Software ₊˚⊹",
+	    "outputColor": "38;2;247;205;238" // red
+        },
+	"break",
+	{
+            "type": "os",
+            "key": "  "
+        },
+        {
+            "type": "kernel",
+            "key": "  "
+        },
+	{
+            "type": "wm",
+            "key": "  "
+        },
+
+        {
+            "type": "packages",
+            "format": "{} (pacman) ", 
+            "key": "  "
+        },
+        {
+            "type": "shell",
+            "key": "  "
+        },
+        {
+            "type": "terminal",
+            "key": "  "
+        },
+	"break",
+	{
+            "type": "custom",
+            "format": "╭‧꒰Hardware ₊˚⊹",
+	    "outputColor": "38;2;247;205;238" // red
+        },
+
+	"break",
+	{
+	    "type": "monitor",
+	    "key": " 󰹑 ",
+	    "format": "{width}x{height} px @ {refresh-rate}Hz"
+	},
+	{
+	    "type": "cpu",
+	    "key": "  ",
+	    "format": "{name} (\u001b[38;2;253;220;244m{cores-logical}\u001b[38;2;242;186;162m) {freq-max}"
+	},
+	{
+	    "type": "disk",
+	    "key": "  ",
+	    "format": "{size-used} / {size-total} ({files-percentage}) - \u001b[38;2;253;220;244m{filesystem}"
+
+	},
+	{
+	    "type": "gpu",
+	    "key": " 󱁊 ",
+	    "format": "{vendor} {driver}"
+	},
+	{
+	    "type": "memory",
+	    "key": "  "
+	},
+	"break",
+	{
+            "type": "custom",
+            "format": "╭‧꒰Misc ₊˚⊹",
+	    "outputColor": "38;2;247;205;238" // red
+        },
+	"break",
+	{
+            "type": "uptime",
+            "key": "󰅶 "
+        },
+	{
+            "type": "media",
+            "key": " "
+        },
+	"break",
+	{
+	    "type": "custom",
+	    "format": "  \u001b[38;2;242;186;162m.     \u001b[90m* 　　 \u001b[31m✦     \u001b[32m.     　\u001b[33m⁺ 　 \u001b[34m.       \u001b[35m* 　　 \u001b[36m✦       \u001b[37m*     \u001b[38;2;242;186;162m."
+	},
+	"break"
+    ]
+}
