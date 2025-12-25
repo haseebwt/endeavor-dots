@@ -1,6 +1,6 @@
 -- set functions for easy bindings
 local function map(mode, key, value)
-	vim.keymap.set(mode, key, value, { noremap = true, silent = true })
+        vim.keymap.set(mode, key, value, { noremap = true, silent = true })
 end
 
 vim.g.mapleader = " "
@@ -58,12 +58,9 @@ map('n', '<leader>gs', "<cmd> Telescope git_status<cr>")
 map('n', '<leader>gf', "<cmd> Telescope git_files<cr>")
 map('n', '<leader>gb', "<cmd> Telescope git_branches<cr>")
 
--- Debug
-map("n", "<leader>dc", function() require("dap").continue() end)                                             --  Continue
-map("n", "<leader>db", function() require("dap").toggle_breakpoint() end)                                    -- Breakpoint
-map("n", "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: ")) end) -- Breakpoint (conditional)
-map("n", "<leader>di", function() require("dap").step_into() end)                                            -- Step Into
-map("n", "<leader>do", function() require("dap").step_over() end)                                            -- Step Over
-map("n", "<leader>dO", function() require("dap").step_out() end)                                             -- Step Out
-map("n", "<leader>dr", function() require("dap").run_last() end)                                             -- Run Last
-map("n", "<leader>du", function() require("dapui").toggle() end)                                             -- Toggle UI
+-- CMake
+map("n", "<leader>cb", "<cmd> CMakeBuild<cr>")
+map("n", "<leader>cg", "<cmd> CMakeGenerate<cr>")
+map("n", "<leader>ct", "<cmd> CMakeTest<cr>")
+map("n", "<leader>ci", "<cmd> CMakeInstall<cr>")
+map("n", "<leader>cq", "<cmd> CMakeClose<cr>")

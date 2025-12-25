@@ -1,6 +1,6 @@
 configuration {
 /*	modes: "window,drun,run,ssh";*/
-	font: "hack nerd font mono 16";
+	font: "hack nerd font mono 20";
 /*	fixed-num-lines: true;*/
 	show-icons: true;
 /*	preview-cmd: ;*/

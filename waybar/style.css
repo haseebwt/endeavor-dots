@@ -1,7 +1,7 @@
 * {
 	/* `otf-font-awesome` is required to be installed for icons */
 	font-family: "Noto Sans", "DejaVuSansM Nerd Font", "Mononoki Nerd Font Propo", Arial, Roboto, Helvetica, sans-serif;
-	font-size: 18px;
+	font-size: 21px;
 }
 
 window#waybar {
@@ -55,7 +55,7 @@ window#waybar.hidden {
 #custom-recording,
 #tray {
 	font-family: Mononoki;
-	font-size: 17px;
+	font-size: 22px;
 	background-color: rgba(107, 44, 23, 0.4);
 	padding: 0 8px;
 	color: #ffecd9;

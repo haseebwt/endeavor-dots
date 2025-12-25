@@ -1,6 +1,8 @@
 --  Options for NVIM --
 
-vim.opt.shiftwidth = 4                    -- tab spaces
+vim.opt.expandtab = true
+vim.opt.tabstop = 8
+vim.opt.shiftwidth = 8                    -- tab spaces
 vim.opt.clipboard = 'unnamedplus'         -- use system clipboard
 vim.opt.ignorecase = true                 -- ignore case in search
 vim.opt.confirm = true                    -- confirm before closing unsaved file

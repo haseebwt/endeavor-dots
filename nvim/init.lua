@@ -3,7 +3,6 @@ require('config.options')
 require('config.autocmd')
 require('config.keybinds')
 
-
 -- LSP
 require('config.lsp')
 -- require('lsp.luals')

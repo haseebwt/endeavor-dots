@@ -10,7 +10,6 @@
 ---   ```
 --- - clangd relies on a [JSON compilation database](https://clang.llvm.org/docs/JSONCompilationDatabase.html)
 ---   specified as compile_commands.json, see https://clangd.llvm.org/installation#compile_commandsjson
-
 -- https://clangd.llvm.org/extensions.html#switch-between-sourceheader
 local function switch_source_header(bufnr, client)
 	local method_name = 'textDocument/switchSourceHeader'
