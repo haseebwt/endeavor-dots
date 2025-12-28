@@ -10,8 +10,7 @@
 		"clock",
 		"mpd",
 		"tray",
-		"custom/updates",
-		"custom/recording"
+                "custom/updates"
 	],
 	"modules-center": [
 		"sway/workspaces"
@@ -91,12 +90,12 @@
 	},
 	"clock": {
 		"timezone": "Asia/Karachi",
-		"format": "󱑕   {:%I:%M %p}",
+		"format": "󱑕 {:%I:%M %p}",
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
 		"format-alt": "  {:%d-%m-%Y}"
 	},
 	"memory": {
-		"format": "  {used} GiB",
+		"format": " {used} GiB",
 		"tooltip": false
 	},
 	"backlight": {
@@ -117,7 +116,7 @@
 	},
 	"battery": {
 		"states": {
-			// "good": 95,
+			"good": 80,
 			"warning": 30,
 			"critical": 15
 		},
@@ -199,9 +198,9 @@
 		"escape": true
 	},
 	"custom/updates": {
-		"tooltip": false,
+		"tooltip": true,
 		"format": "{}  ",
-		"exec": "wc -l < /tmp/upgradable.txt",
+		"exec": "$HOME/.config/scripts/checkupdates.sh",
 		"on-click": "$HOME/.config/scripts/checkupdates.sh",
 		"interval": 3600
 	},

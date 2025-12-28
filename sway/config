@@ -16,7 +16,7 @@ set $up k
 set $right l
 
 # Your preferred terminal emulator
-set $term kitty 
+set $term kitty
 
 # Your preferred application launcher
 set $menu rofi -show drun 
@@ -283,6 +283,6 @@ client.focused #9b3915 #9b3915 #9b3915 #ce5b31
 # client.focused_inactive #3b2b3f #3b2b3f #3b2b3f
 client.unfocused #3a170a #3a170a #3a170a
 
-exec swaync & waybar & mpd & swww-daemon &
+exec swaync & waybar & mpd & swww-daemon & $(xdg-user-dir)/.config/scripts/nightlight.sh
 
 include /etc/sway/config.d/*

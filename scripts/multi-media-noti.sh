@@ -38,7 +38,7 @@ volume_notifi(){
     volume=$(get_mute)
     volume_icon
 
-    notify-send -t $notification_timeout -r 1 -h string:x-dunst-stack-tag:volume_notif -h int:value:$volume "$volume_icon $volume%"
+    notify-send -t $notification_timeout -r 1 -h string:x-dunst-stack-tag:volume_notif -h int:value:$volume "$volume_icon $volume%" 
 }
 
 brightness_notifi(){
