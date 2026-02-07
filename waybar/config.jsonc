@@ -9,8 +9,7 @@
 	"modules-left": [
 		"clock",
 		"mpd",
-		"tray",
-                "custom/updates"
+		"tray"
 	],
 	"modules-center": [
 		"sway/workspaces"

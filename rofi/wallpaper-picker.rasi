@@ -9,7 +9,7 @@
     /** Default background color is transparent. */
     background-color: transparent;
     /** Input bar font size **/
-    font:   "DejaVu Sans Mono 16";
+    font:   "DejaVu Sans Mono 12";
 
     /** Default text is white */
     text-color:       white;
@@ -31,7 +31,7 @@ window {
 
     /** 100% screen width */
     width:            50%;
-    height:	      34%;
+    height:	      30%;
 
     y-offset: 0px;
     background-color: #23120c;
@@ -83,7 +83,7 @@ element selected {
 /** Entry icon */
 element-icon {
     /** change size to 128 pixels. */
-    size: 16.56ch;
+    size: 20.56ch;
     cursor: inherit;
 }
 

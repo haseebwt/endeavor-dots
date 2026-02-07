@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 get_updates(){
-    pacman -Sy
+    sudo pacman -Sy
     pacman -Qu > /tmp/upgradable.txt
     list=$(wc -l < /tmp/upgradable.txt)
     number

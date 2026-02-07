@@ -48,7 +48,7 @@
 		},
 		"mpris": {
 			"image-size": 96,
-			"autohide": false,
+			"autohide": true,
 			"image-radius": 7
 		},
 		"volume": {
@@ -56,9 +56,6 @@
 			"show-per-app": true,
 			"show-per-app-icon": false,
 			"show-per-app-label": true
-		},
-		"backlight": {
-			"label": "󰃟 "
 		},
 		"buttons-grid": {
 			"actions": [

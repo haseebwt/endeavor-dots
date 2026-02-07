@@ -1,11 +1,12 @@
 * {
-    font:            "hack nerd font mono 14";
+
+    font:            "hack nerd font mono 16";
 }
 window {
     anchor:     north;
     location:   center;
     width:      30%;
-    height: 	12%;
+    height: 	10%;
     padding:    6px;
     children:   [ prompt, horibox ];
 
@@ -29,7 +30,7 @@ entry {
 
 prompt {
 
-    padding: 	10px 0 10 200px;
+    padding: 	10px 0 10 245px;
     
 }
 
