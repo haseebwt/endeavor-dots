@@ -3,7 +3,8 @@ vim.lsp.enable({
         "clangd",
         "pylsp",
         "rust_analyzer",
-        "html"
+        "html",
+        "bash_language_server"
 })
 
 local vim = vim

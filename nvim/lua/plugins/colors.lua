@@ -5,16 +5,17 @@ return {
                 -- 'wtfox/jellybeans.nvim',
                 -- "folke/tokyonight.nvim",
                 -- "sainnhe/everforest",
-                "rose-pine/neovim",
+                -- "rose-pine/neovim",
                 -- "sainnhe/gruvbox-material",
                 -- "morhetz/gruvbox",
-                -- "savq/melange-nvim",
+                -- "savq/melange",
+                'scottmckendry/cyberdream.nvim',
                 -- 'sts10/vim-pink-moon',
                 lazy = false,    -- make sure we load this during startup if it is your main colorscheme
                 priority = 1000, -- make sure to load this before all the other start plugins
                 config = function()
                         -- load the colorscheme here
-                        vim.cmd.colorscheme('rose-pine-moon')
+                        vim.cmd.colorscheme('cyberdream')
                 end
         },
         {
@@ -24,7 +25,7 @@ return {
                         "nvim-tree/nvim-web-devicons"
                 },
                 opts = {
-                        theme = 'rose-pine-moon',
+                        theme = 'auto',
                         -- theme = 'pywal-nvim',
                 }
         },

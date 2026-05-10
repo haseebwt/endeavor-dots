@@ -1,0 +1,7 @@
+{
+  "log_level": "dev",
+  "show_hidden_events": false,
+  "auto_update_disabled": false,
+  "external_platforms": [],
+  "quit_on_close": true
+}

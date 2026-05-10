@@ -30,15 +30,16 @@ set $wifi ~/.config/scripts/networks.sh
 # wallpaper
 set $wal ~/.config/scripts/pickwal-sway.sh
 
+# alt-tab?
+set $window-info rofi -show window
 
 # screenshots
 set $screen grim -g "$(slurp)" - | wl-copy && notify-send "Grim" "Screenshot Copied!"
 set $fullscreen-cop grim - | wl-copy && notify-send "Grim" "Screenshot Copied!"
 set $fullscreen grim $(xdg-user-dir PICTURES)/Screenshots/$(date +'%s_grim.png') && notify-send 'System' 'Screenshot Copied!'
 
-
-# alt-tab?
-set $window-info rofi -show window
+# emoji
+set $emoji rofi -show emoji -modes emoji -theme-str "element-text {font: 'DejaVu Sans Mono 18';} element {padding: 8px 0px; spacing: 0px;}"
 
 # Font
 font pango:DejaVuSansM Medium 10
@@ -88,6 +89,8 @@ swaybg_command -
 
   input type:keyboard {
       xkb_layout "us"
+      repeat_delay 200
+      repeat_rate 30
   }
 
 # You can also configure each device individually.
@@ -113,7 +116,7 @@ swaybg_command -
     bindsym $mod+Shift+minus exec pkill waybar && waybar
 
     # Emoji
-    bindsym $mod+period exec rofi -show emoji
+    bindsym $mod+period exec $emoji
 
     # Change wallpaper
     bindsym $mod+I exec $wal 
@@ -283,6 +286,6 @@ client.focused #9b3915 #9b3915 #9b3915 #ce5b31
 # client.focused_inactive #3b2b3f #3b2b3f #3b2b3f
 client.unfocused #3a170a #3a170a #3a170a
 
-exec swaync & waybar & mpd & swww-daemon & $(xdg-user-dir)/.config/scripts/nightlight.sh
+exec swaync & waybar & mpd & awww-daemon & $(xdg-user-dir)/.config/scripts/nightlight.sh
 
 include /etc/sway/config.d/*

@@ -1,0 +1,176 @@
+[log] [2026-03-17T19:23:44.433Z] Howdy from sqlite_worker!
+[debug] [2026-03-17T19:24:14.779Z] [sqlite-worker] 
+        INSERT OR IGNORE INTO mx_room_messages_fts(rowid, text_content)
+        SELECT m.id, json_extract(m.message, '$.text')
+        FROM mx_room_messages m
+        WHERE m.type IN ('AUDIO','FILE','IMAGE','MEMBER','NOTICE','REACTION','STICKER','TEXT','VIDEO','VOICE')
+          AND m.id > ?
+        ORDER BY m.id
+        LIMIT 1000;
+      
+[debug] [2026-03-17T19:24:14.781Z] [sqlite-worker] 
+        SELECT threadID, accountID, thread, ROWID as rowid
+        FROM threads 
+        WHERE ROWID > ? 
+        ORDER BY ROWID 
+        LIMIT 100
+      
+[debug] [2026-03-17T19:24:14.781Z] [sqlite-worker] 
+  UPDATE mx_room_messages
+  SET message_size = length(CAST(message AS BLOB))
+  WHERE id IN (
+    SELECT id FROM mx_room_messages
+    WHERE message_size = 0 AND id > ?
+    ORDER BY id
+    LIMIT 20
+  )
+  RETURNING id
+
+[debug] [2026-03-17T19:24:17.139Z] [sqlite-worker] 
+  WITH to_update AS (
+    SELECT
+      f.rowid AS rid,
+      json_extract(m.message, '$.attachments[0].transcription.transcription') AS txt
+    FROM mx_room_messages_fts f
+    JOIN mx_room_messages m ON m.id = f.rowid
+    WHERE m.type = 'VOICE'
+      AND m.id > ?
+      AND json_type(m.message, '$.attachments[0].transcription.transcription') <> 'null'
+    ORDER BY m.id
+    LIMIT 1000
+  )
+  UPDATE mx_room_messages_fts
+  SET text_content = (SELECT txt FROM to_update WHERE rid = mx_room_messages_fts.rowid)
+  WHERE rowid IN (SELECT rid FROM to_update);
+
+[warn] [2026-03-17T19:24:17.140Z] sqlite log code=284: automatic index on to_update(rid)
+[debug] [2026-03-17T19:24:17.151Z] [sqlite-worker] 
+  WITH to_update AS (
+    SELECT m.id AS mid
+    FROM mx_room_messages_fts f
+    JOIN mx_room_messages m ON m.id = f.rowid
+    WHERE m.type = 'VOICE'
+      AND m.id > ?
+      AND json_type(m.message, '$.attachments[0].transcription.transcription') <> 'null'
+    ORDER BY m.id
+    LIMIT 1000
+  )
+  SELECT MAX(mid) AS rowid FROM to_update;  
+
+[log] [2026-03-26T17:45:47.541Z] Howdy from sqlite_worker!
+[log] [2026-03-26T17:51:35.223Z] closing db /home/beeb/.config/BeeperTexts/index.db
+[log] [2026-03-26T17:51:39.809Z] Howdy from sqlite_worker!
+[debug] [2026-03-26T17:52:11.495Z] [sqlite-worker] 
+  WITH to_update AS (
+    SELECT
+      f.rowid AS rid,
+      json_extract(m.message, '$.attachments[0].transcription.transcription') AS txt
+    FROM mx_room_messages_fts f
+    JOIN mx_room_messages m ON m.id = f.rowid
+    WHERE m.type = 'VOICE'
+      AND m.id > ?
+      AND json_type(m.message, '$.attachments[0].transcription.transcription') <> 'null'
+    ORDER BY m.id
+    LIMIT 1000
+  )
+  UPDATE mx_room_messages_fts
+  SET text_content = (SELECT txt FROM to_update WHERE rid = mx_room_messages_fts.rowid)
+  WHERE rowid IN (SELECT rid FROM to_update);
+
+[warn] [2026-03-26T17:52:11.496Z] sqlite log code=284: automatic index on to_update(rid)
+[debug] [2026-03-26T17:52:11.503Z] [sqlite-worker] 
+  WITH to_update AS (
+    SELECT m.id AS mid
+    FROM mx_room_messages_fts f
+    JOIN mx_room_messages m ON m.id = f.rowid
+    WHERE m.type = 'VOICE'
+      AND m.id > ?
+      AND json_type(m.message, '$.attachments[0].transcription.transcription') <> 'null'
+    ORDER BY m.id
+    LIMIT 1000
+  )
+  SELECT MAX(mid) AS rowid FROM to_update;  
+
+[log] [2026-03-26T18:20:28.963Z] closing db /home/beeb/.config/BeeperTexts/index.db
+[log] [2026-03-26T18:21:11.829Z] Howdy from sqlite_worker!
+[log] [2026-03-26T20:01:11.623Z] Howdy from sqlite_worker!
+[log] [2026-03-26T20:02:10.556Z] closing db /home/beeb/.config/BeeperTexts/index.db
+[log] [2026-03-26T20:02:58.480Z] Howdy from sqlite_worker!
+[log] [2026-03-26T20:04:12.938Z] closing db /home/beeb/.config/BeeperTexts/index.db
+[log] [2026-04-05T20:19:11.710Z] Howdy from sqlite_worker!
+[log] [2026-04-06T16:46:08.915Z] Howdy from sqlite_worker!
+[log] [2026-04-06T21:01:33.711Z] closing db /home/beeb/.config/BeeperTexts/index.db
+[log] [2026-04-08T19:34:16.132Z] Howdy from sqlite_worker!
+[debug] [2026-04-08T19:34:49.176Z] [sqlite-worker] 
+  WITH to_update AS (
+    SELECT
+      f.rowid AS rid,
+      json_extract(m.message, '$.attachments[0].transcription.transcription') AS txt
+    FROM mx_room_messages_fts f
+    JOIN mx_room_messages m ON m.id = f.rowid
+    WHERE m.type = 'VOICE'
+      AND m.id > ?
+      AND json_type(m.message, '$.attachments[0].transcription.transcription') <> 'null'
+    ORDER BY m.id
+    LIMIT 1000
+  )
+  UPDATE mx_room_messages_fts
+  SET text_content = (SELECT txt FROM to_update WHERE rid = mx_room_messages_fts.rowid)
+  WHERE rowid IN (SELECT rid FROM to_update);
+
+[warn] [2026-04-08T19:34:49.178Z] sqlite log code=284: automatic index on to_update(rid)
+[debug] [2026-04-08T19:34:49.252Z] [sqlite-worker] 
+  WITH to_update AS (
+    SELECT m.id AS mid
+    FROM mx_room_messages_fts f
+    JOIN mx_room_messages m ON m.id = f.rowid
+    WHERE m.type = 'VOICE'
+      AND m.id > ?
+      AND json_type(m.message, '$.attachments[0].transcription.transcription') <> 'null'
+    ORDER BY m.id
+    LIMIT 1000
+  )
+  SELECT MAX(mid) AS rowid FROM to_update;  
+
+[log] [2026-04-09T18:25:00.377Z] Howdy from sqlite_worker!
+[log] [2026-04-14T17:17:04.821Z] Howdy from sqlite_worker!
+[log] [2026-04-14T17:18:13.637Z] closing db /home/beeb/.config/BeeperTexts/index.db
+[log] [2026-04-14T17:18:17.719Z] Howdy from sqlite_worker!
+[log] [2026-04-14T17:18:29.036Z] closing db /home/beeb/.config/BeeperTexts/index.db
+[log] [2026-04-14T17:18:49.591Z] Howdy from sqlite_worker!
+[debug] [2026-04-14T17:19:23.400Z] [sqlite-worker] 
+  WITH to_update AS (
+    SELECT
+      f.rowid AS rid,
+      json_extract(m.message, '$.attachments[0].transcription.transcription') AS txt
+    FROM mx_room_messages_fts f
+    JOIN mx_room_messages m ON m.id = f.rowid
+    WHERE m.type = 'VOICE'
+      AND m.id > ?
+      AND json_type(m.message, '$.attachments[0].transcription.transcription') <> 'null'
+    ORDER BY m.id
+    LIMIT 1000
+  )
+  UPDATE mx_room_messages_fts
+  SET text_content = (SELECT txt FROM to_update WHERE rid = mx_room_messages_fts.rowid)
+  WHERE rowid IN (SELECT rid FROM to_update);
+
+[warn] [2026-04-14T17:19:23.503Z] sqlite log code=284: automatic index on to_update(rid)
+[debug] [2026-04-14T17:19:39.528Z] [sqlite-worker] 
+  WITH to_update AS (
+    SELECT m.id AS mid
+    FROM mx_room_messages_fts f
+    JOIN mx_room_messages m ON m.id = f.rowid
+    WHERE m.type = 'VOICE'
+      AND m.id > ?
+      AND json_type(m.message, '$.attachments[0].transcription.transcription') <> 'null'
+    ORDER BY m.id
+    LIMIT 1000
+  )
+  SELECT MAX(mid) AS rowid FROM to_update;  
+
+[log] [2026-04-14T18:58:08.590Z] closing db /home/beeb/.config/BeeperTexts/index.db
+[log] [2026-04-17T20:21:39.061Z] Howdy from sqlite_worker!
+[log] [2026-04-17T20:27:03.417Z] closing db /home/beeb/.config/BeeperTexts/index.db
+[log] [2026-04-17T20:27:06.780Z] Howdy from sqlite_worker!
+[log] [2026-04-17T20:30:25.088Z] closing db /home/beeb/.config/BeeperTexts/index.db

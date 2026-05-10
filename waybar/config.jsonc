@@ -8,7 +8,7 @@
 	// Choose the order of the modules
 	"modules-left": [
 		"clock",
-		"mpd",
+		// "mpris",
 		"tray"
 	],
 	"modules-center": [
@@ -16,9 +16,11 @@
 	],
 	"modules-right": [
 		"sway/window",
+                "custom/weather",
 		"group/util",
 		"network",
 		"memory",
+                "battery",
 		"custom/notification"
 	],
 	// Modules configuration
@@ -34,7 +36,9 @@
 		"rewrite": {
 			"(.*)librewolf": "",
 			"(.*)kitty": "󰄛",
-			"(.*)discord": "󰍡"
+			"(.*)discord": "󰍡",
+			"(.*)app.zen_browser.zen": "󰏩",
+			"(.*)BeeperTexts": "♥"
 		},
 		"seperate-outputs": true
 	},
@@ -61,37 +65,11 @@
 			"3": []
 		}
 	},
-	"mpd": {
-		"tooltip": false,
-		"format": "{stateIcon}  {artist} - {title}",
-		"format-alt": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon} / {volume}%",
-		"format-disconnected": "Disconnected  ",
-		"format-stopped": "Stopped  ",
-		"unknown-tag": "N/A",
-		"interval": 5,
-		"consume-icons": {
-			"on": " "
-		},
-		"random-icons": {
-			"off": "<span color=\"#f53c3c\"></span> ",
-			"on": " "
-		},
-		"repeat-icons": {
-			"on": " "
-		},
-		"single-icons": {
-			"on": "1 "
-		},
-		"state-icons": {
-			"paused": "",
-			"playing": ""
-		}
-	},
 	"clock": {
 		"timezone": "Asia/Karachi",
 		"format": "󱑕 {:%I:%M %p}",
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-		"format-alt": "  {:%d-%m-%Y}"
+		"format-alt": "  {:%a, %d %b }"
 	},
 	"memory": {
 		"format": " {used} GiB",
@@ -175,6 +153,22 @@
 		"icon-size": 20,
 		"spacing": 10
 	},
+        "mpris": {
+              "rewrite": {
+                "^(.{16}).+$": "$1…"
+                      },
+                "tooltip": false,
+                "format": "{title}",
+                "format-paused": "<i>{dynamic}</i>",
+                "player-icons": {
+                        "default": "▶",
+                        "mpv": "🎵"
+                },
+                "status-icons": {
+                        "paused": "⏸"
+                },
+                "ignored-players": ["librewolf", "app.zen_browser.zen"]
+        },
 	"custom/notification": {
 		"tooltip": false,
 		"format": "{0}  {icon}",
@@ -208,5 +202,15 @@
 		"format": "",
 		"interval": "once",
 		"signal": 8
-	}
+	},
+        "custom/weather":
+        {
+                "tooltip": false,
+                "format": "{text}",
+                "format-alt": "{alt}",
+                "interval": 12000000000,
+                "exec": "$HOME/.config/waybar/scripts/weather.sh",
+                "on-click-middle": "$HOME/.config/waybar/scripts/weather.sh",
+                "return-type": "json",
+        },
 }

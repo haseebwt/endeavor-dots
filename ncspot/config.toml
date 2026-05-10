@@ -1,0 +1,25 @@
+use_nerdfont = true # Enable nerd fonts
+notify = true # Notify on song change
+library_tabs = ["tracks", "artists", "playlists", "browse"]
+cover = true # Show album cover?
+
+
+
+[theme]
+background = "#16181a"
+primary = "#F8F8F2"
+secondary = "light black"
+title = "#ffbd5e"
+playing = "#5eff6c"
+playing_selected = "#5eff6c"
+playing_bg = "black"
+highlight = "#ffffff"
+highlight_bg = "#3c4048"
+error = "#f8f8f2"
+error_bg = "#ff5555"
+statusbar = "#5ef1ff"
+statusbar_progress = "#bd5eff"
+statusbar_bg = "#16181a"
+cmdline = "#F8F8F2" 
+cmdline_bg = "#16181a"
+search_match = "#ff79c6"

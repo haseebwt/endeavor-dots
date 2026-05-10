@@ -1,0 +1,6 @@
+2026/04/18-01:21:39.504 2fb1 Reusing MANIFEST /home/beeb/.config/BeeperTexts/Local Storage/leveldb/MANIFEST-000001
+2026/04/18-01:21:39.510 2fb1 Recovering log #4
+2026/04/18-01:21:39.511 2fb1 Reusing old log /home/beeb/.config/BeeperTexts/Local Storage/leveldb/000004.log 
+2026/04/18-01:24:40.512 2fb3 Level-0 table #8: started
+2026/04/18-01:24:40.521 2fb3 Level-0 table #8: 13495 bytes OK
+2026/04/18-01:24:40.533 2fb3 Delete type=0 #4

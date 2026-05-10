@@ -1,0 +1,185 @@
+[log] [2026-03-17T19:23:44.353Z] Howdy from sqlite_worker!
+[log] [2026-03-26T17:45:47.603Z] Howdy from sqlite_worker!
+[log] [2026-03-26T17:51:35.223Z] closing db /home/beeb/.config/BeeperTexts/index.db
+[log] [2026-03-26T17:51:39.763Z] Howdy from sqlite_worker!
+[debug] [2026-03-26T17:56:16.653Z] [sqlite-worker] 
+      SELECT roomID, COUNT(*) as count, SUM(message_size) as bytes
+      FROM mx_room_messages
+      WHERE isDeleted = 0
+      GROUP BY roomID
+    
+[debug] [2026-03-26T17:56:16.662Z] [sqlite-worker] SELECT * FROM pragma_page_count()
+[debug] [2026-03-26T17:56:16.663Z] [sqlite-worker] SELECT * FROM pragma_page_size()
+[debug] [2026-03-26T17:56:16.663Z] [sqlite-worker] 
+          SELECT roomID, SUM(CASE WHEN timestamp < ? THEN message_size ELSE 0 END) as bytes_30, SUM(CASE WHEN timestamp < ? THEN 1 ELSE 0 END) as count_30, SUM(CASE WHEN timestamp < ? THEN message_size ELSE 0 END) as bytes_90, SUM(CASE WHEN timestamp < ? THEN 1 ELSE 0 END) as count_90, SUM(CASE WHEN timestamp < ? THEN message_size ELSE 0 END) as bytes_120, SUM(CASE WHEN timestamp < ? THEN 1 ELSE 0 END) as count_120
+          FROM mx_room_messages
+          WHERE isDeleted = 0
+          GROUP BY roomID
+        
+[debug] [2026-03-26T17:56:22.176Z] [sqlite-worker] 
+      SELECT roomID, COUNT(*) as count, SUM(message_size) as bytes
+      FROM mx_room_messages
+      WHERE isDeleted = 0
+      GROUP BY roomID
+    
+[debug] [2026-03-26T17:56:22.177Z] [sqlite-worker] SELECT * FROM pragma_page_count()
+[debug] [2026-03-26T17:56:22.177Z] [sqlite-worker] SELECT * FROM pragma_page_size()
+[debug] [2026-03-26T17:56:22.177Z] [sqlite-worker] 
+          SELECT roomID, SUM(CASE WHEN timestamp < ? THEN message_size ELSE 0 END) as bytes_30, SUM(CASE WHEN timestamp < ? THEN 1 ELSE 0 END) as count_30, SUM(CASE WHEN timestamp < ? THEN message_size ELSE 0 END) as bytes_90, SUM(CASE WHEN timestamp < ? THEN 1 ELSE 0 END) as count_90, SUM(CASE WHEN timestamp < ? THEN message_size ELSE 0 END) as bytes_120, SUM(CASE WHEN timestamp < ? THEN 1 ELSE 0 END) as count_120
+          FROM mx_room_messages
+          WHERE isDeleted = 0
+          GROUP BY roomID
+        
+[debug] [2026-03-26T17:56:22.210Z] [sqlite-worker] 
+      SELECT roomID, COUNT(*) as count, SUM(message_size) as bytes
+      FROM mx_room_messages
+      WHERE isDeleted = 0
+      GROUP BY roomID
+    
+[debug] [2026-03-26T17:56:22.214Z] [sqlite-worker] SELECT * FROM pragma_page_count()
+[debug] [2026-03-26T17:56:22.215Z] [sqlite-worker] SELECT * FROM pragma_page_size()
+[debug] [2026-03-26T17:56:22.215Z] [sqlite-worker] 
+          SELECT roomID, SUM(CASE WHEN timestamp < ? THEN message_size ELSE 0 END) as bytes_30, SUM(CASE WHEN timestamp < ? THEN 1 ELSE 0 END) as count_30, SUM(CASE WHEN timestamp < ? THEN message_size ELSE 0 END) as bytes_90, SUM(CASE WHEN timestamp < ? THEN 1 ELSE 0 END) as count_90, SUM(CASE WHEN timestamp < ? THEN message_size ELSE 0 END) as bytes_120, SUM(CASE WHEN timestamp < ? THEN 1 ELSE 0 END) as count_120
+          FROM mx_room_messages
+          WHERE isDeleted = 0
+          GROUP BY roomID
+        
+[debug] [2026-03-26T17:56:22.251Z] [sqlite-worker] 
+      SELECT roomID, COUNT(*) as count, SUM(message_size) as bytes
+      FROM mx_room_messages
+      WHERE isDeleted = 0
+      GROUP BY roomID
+    
+[debug] [2026-03-26T17:56:22.252Z] [sqlite-worker] SELECT * FROM pragma_page_count()
+[debug] [2026-03-26T17:56:22.255Z] [sqlite-worker] SELECT * FROM pragma_page_size()
+[debug] [2026-03-26T17:56:22.256Z] [sqlite-worker] 
+          SELECT roomID, SUM(CASE WHEN timestamp < ? THEN message_size ELSE 0 END) as bytes_30, SUM(CASE WHEN timestamp < ? THEN 1 ELSE 0 END) as count_30, SUM(CASE WHEN timestamp < ? THEN message_size ELSE 0 END) as bytes_90, SUM(CASE WHEN timestamp < ? THEN 1 ELSE 0 END) as count_90, SUM(CASE WHEN timestamp < ? THEN message_size ELSE 0 END) as bytes_120, SUM(CASE WHEN timestamp < ? THEN 1 ELSE 0 END) as count_120
+          FROM mx_room_messages
+          WHERE isDeleted = 0
+          GROUP BY roomID
+        
+[debug] [2026-03-26T17:56:22.281Z] [sqlite-worker] 
+      SELECT roomID, COUNT(*) as count, SUM(message_size) as bytes
+      FROM mx_room_messages
+      WHERE isDeleted = 0
+      GROUP BY roomID
+    
+[debug] [2026-03-26T17:56:22.281Z] [sqlite-worker] SELECT * FROM pragma_page_count()
+[debug] [2026-03-26T17:56:22.281Z] [sqlite-worker] SELECT * FROM pragma_page_size()
+[debug] [2026-03-26T17:56:22.282Z] [sqlite-worker] 
+          SELECT roomID, SUM(CASE WHEN timestamp < ? THEN message_size ELSE 0 END) as bytes_30, SUM(CASE WHEN timestamp < ? THEN 1 ELSE 0 END) as count_30, SUM(CASE WHEN timestamp < ? THEN message_size ELSE 0 END) as bytes_90, SUM(CASE WHEN timestamp < ? THEN 1 ELSE 0 END) as count_90, SUM(CASE WHEN timestamp < ? THEN message_size ELSE 0 END) as bytes_120, SUM(CASE WHEN timestamp < ? THEN 1 ELSE 0 END) as count_120
+          FROM mx_room_messages
+          WHERE isDeleted = 0
+          GROUP BY roomID
+        
+[debug] [2026-03-26T17:56:22.308Z] [sqlite-worker] 
+      SELECT roomID, COUNT(*) as count, SUM(message_size) as bytes
+      FROM mx_room_messages
+      WHERE isDeleted = 0
+      GROUP BY roomID
+    
+[debug] [2026-03-26T17:56:22.310Z] [sqlite-worker] SELECT * FROM pragma_page_count()
+[debug] [2026-03-26T17:56:22.310Z] [sqlite-worker] SELECT * FROM pragma_page_size()
+[debug] [2026-03-26T17:56:22.310Z] [sqlite-worker] 
+          SELECT roomID, SUM(CASE WHEN timestamp < ? THEN message_size ELSE 0 END) as bytes_30, SUM(CASE WHEN timestamp < ? THEN 1 ELSE 0 END) as count_30, SUM(CASE WHEN timestamp < ? THEN message_size ELSE 0 END) as bytes_90, SUM(CASE WHEN timestamp < ? THEN 1 ELSE 0 END) as count_90, SUM(CASE WHEN timestamp < ? THEN message_size ELSE 0 END) as bytes_120, SUM(CASE WHEN timestamp < ? THEN 1 ELSE 0 END) as count_120
+          FROM mx_room_messages
+          WHERE isDeleted = 0
+          GROUP BY roomID
+        
+[debug] [2026-03-26T18:10:39.484Z] [sqlite-worker] 
+SELECT
+  t.accountID,
+  m.roomID,
+  m.timestamp,
+  
+    m.id AS mx_msg_id,
+    m.roomID AS mx_msg_roomID,
+    m.eventID AS mx_msg_eventID,
+    m.message AS mx_msg_msg,
+    m.hsOrder AS mx_msg_hsOrder,
+    m.sendStatus AS mx_msg_sendStatus,
+    (
+    SELECT json_object('id', linked.id, 'message', linked.message)
+    FROM mx_room_messages linked
+    WHERE m.inReplyToID IS NOT NULL
+      AND (linked.eventID = m.inReplyToID OR linked.lastEditionID = m.inReplyToID)
+    LIMIT 1
+  ) AS mx_msg_linkedMessage,
+    m.echo_echoID AS mx_msg_echo_echoID
+  
+FROM (
+  SELECT m.*
+  FROM mx_room_messages m
+  
+  WHERE m.type NOT IN ('HIDDEN', 'REACTION') AND m.isDeleted = 0
+  
+   
+  AND m.roomID IN (?)
+   
+   
+   
+  AND (json_extract(message, '$.attachments') LIKE '%"type":"img"%' OR json_extract(message, '$.attachments') LIKE '%"type":"video"%' OR (json_extract(message, '$.attachments') LIKE '%"type":"link"%' OR json_array_length(m.message, '$.links') > 0))
+   
+  ORDER BY m.timestamp DESC, m.id DESC
+  LIMIT 13
+) m
+JOIN threads t ON m.roomID = t.threadID
+[log] [2026-03-26T18:20:28.962Z] closing db /home/beeb/.config/BeeperTexts/index.db
+[log] [2026-03-26T18:21:11.886Z] Howdy from sqlite_worker!
+[log] [2026-03-26T20:01:11.638Z] Howdy from sqlite_worker!
+[debug] [2026-03-26T20:01:38.655Z] [sqlite-worker] 
+SELECT
+  t.accountID,
+  m.roomID,
+  m.timestamp,
+  
+    m.id AS mx_msg_id,
+    m.roomID AS mx_msg_roomID,
+    m.eventID AS mx_msg_eventID,
+    m.message AS mx_msg_msg,
+    m.hsOrder AS mx_msg_hsOrder,
+    m.sendStatus AS mx_msg_sendStatus,
+    (
+    SELECT json_object('id', linked.id, 'message', linked.message)
+    FROM mx_room_messages linked
+    WHERE m.inReplyToID IS NOT NULL
+      AND (linked.eventID = m.inReplyToID OR linked.lastEditionID = m.inReplyToID)
+    LIMIT 1
+  ) AS mx_msg_linkedMessage,
+    m.echo_echoID AS mx_msg_echo_echoID
+  
+FROM (
+  SELECT m.*
+  FROM mx_room_messages m
+  
+  WHERE m.type NOT IN ('HIDDEN', 'REACTION') AND m.isDeleted = 0
+  
+   
+  AND m.roomID IN (?)
+   
+   
+   
+  AND (json_extract(message, '$.attachments') LIKE '%"type":"img"%' OR json_extract(message, '$.attachments') LIKE '%"type":"video"%' OR (json_extract(message, '$.attachments') LIKE '%"type":"link"%' OR json_array_length(m.message, '$.links') > 0))
+   
+  ORDER BY m.timestamp DESC, m.id DESC
+  LIMIT 13
+) m
+JOIN threads t ON m.roomID = t.threadID
+[log] [2026-03-26T20:02:10.550Z] closing db /home/beeb/.config/BeeperTexts/index.db
+[log] [2026-03-26T20:02:58.517Z] Howdy from sqlite_worker!
+[log] [2026-03-26T20:04:12.939Z] closing db /home/beeb/.config/BeeperTexts/index.db
+[log] [2026-04-05T20:19:11.704Z] Howdy from sqlite_worker!
+[log] [2026-04-06T16:46:08.892Z] Howdy from sqlite_worker!
+[log] [2026-04-06T21:01:33.713Z] closing db /home/beeb/.config/BeeperTexts/index.db
+[log] [2026-04-08T19:34:16.149Z] Howdy from sqlite_worker!
+[log] [2026-04-09T18:25:00.368Z] Howdy from sqlite_worker!
+[log] [2026-04-14T17:17:04.764Z] Howdy from sqlite_worker!
+[log] [2026-04-14T17:18:13.636Z] closing db /home/beeb/.config/BeeperTexts/index.db
+[log] [2026-04-14T17:18:17.785Z] Howdy from sqlite_worker!
+[log] [2026-04-14T17:18:29.035Z] closing db /home/beeb/.config/BeeperTexts/index.db
+[log] [2026-04-14T17:18:49.582Z] Howdy from sqlite_worker!
+[log] [2026-04-14T18:58:08.590Z] closing db /home/beeb/.config/BeeperTexts/index.db
+[log] [2026-04-17T20:21:39.034Z] Howdy from sqlite_worker!
+[log] [2026-04-17T20:27:03.417Z] closing db /home/beeb/.config/BeeperTexts/index.db
+[log] [2026-04-17T20:27:06.795Z] Howdy from sqlite_worker!
+[log] [2026-04-17T20:30:25.089Z] closing db /home/beeb/.config/BeeperTexts/index.db

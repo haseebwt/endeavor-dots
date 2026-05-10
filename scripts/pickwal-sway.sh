@@ -12,13 +12,13 @@ setwal(){
 	notify-send "No wallpaper sent" "Remaining state!"
     else
 
-    swww clear-cache &
-    swww img $dir$wallpaper --transition-step 255 --transition-fps 30 --transition-type any
+    awww clear-cache &
+    awww img $dir$wallpaper --transition-step 255 --transition-fps 30 --transition-type any
 
     # Setting pywal
     # sleep 5;
     # wal -i $dir$wallpaper &
-    #
+
     echo $wallpaper > ~/.config/scripts/current_wallpaper.txt
 
     # Let the user know it's done

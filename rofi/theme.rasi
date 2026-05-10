@@ -1,9 +1,3 @@
-/**
- * ROFI Color theme
- * User: milouse
- * Copyright: Étienne Deparis
- */
-
 * {
     selected-normal-foreground:  #ffecd9;
     foreground:                  #fcfbe0;

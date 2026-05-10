@@ -23,8 +23,8 @@ setwal(){
     # Monitor
     monitor=`hyprctl monitors | grep Monitor | awk '{print $2}'`
 
-    swww clear-cache &
-    swww img $dir$wallpaper --transition-step 255 --transition-fps 30 --transition-type any
+    awww clear-cache &
+    awww img $dir$wallpaper --transition-step 255 --transition-fps 30 --transition-type any
 
     sleep 2; 
 
