@@ -1,6 +1,6 @@
 * {
 	/* `otf-font-awesome` is required to be installed for icons */
-	font-family: "Noto Sans", "DejaVuSansM Nerd Font", "Mononoki Nerd Font Propo", Arial, Roboto, Helvetica, sans-serif;
+	font-family: "NotoSans Nerd Font", "DejaVuSansM Nerd Font", "Mononoki Nerd Font Propo", Arial, Roboto, Helvetica, sans-serif;
 	font-size: 21px;
 }
 
@@ -50,6 +50,7 @@ window#waybar.hidden {
 #pulseaudio,
 #custom-media,
 #util,
+#cpu,
 #custom-notification,
 #custom-weather,
 #tray,

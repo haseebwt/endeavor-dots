@@ -20,6 +20,7 @@
 		"group/util",
 		"network",
 		"memory",
+                "cpu",
                 "battery",
 		"custom/notification"
 	],
@@ -67,14 +68,19 @@
 	},
 	"clock": {
 		"timezone": "Asia/Karachi",
-		"format": "󱑕 {:%I:%M %p}",
+		"format": "󱑌 {:%I:%M %p}",
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-		"format-alt": "  {:%a, %d %b }"
+		"format-alt": " {:%a, %d %b }"
 	},
 	"memory": {
 		"format": " {used} GiB",
 		"tooltip": false
 	},
+        "cpu": {
+                "interval": 10,
+                "format": "{}% ",
+                "max-length": 10
+        },
 	"backlight": {
 		// "device": "acpi_video1",
 		"format": "{icon}",
@@ -99,17 +105,17 @@
 		},
 		"format": "{capacity}% {icon}",
 		"format-full": "{capacity}% {icon}",
-		"format-charging": "{capacity}% ",
+		"format-charging": "{capacity}% 󰂄",
 		"format-plugged": "{capacity}% ",
 		"format-alt": "{time} {icon}",
 		// "format-good": "", // An empty format will hide the module
 		// "format-full": "",
 		"format-icons": [
-			"",
-			"",
-			"",
-			"",
-			""
+			"󰁺",
+			"󰁼",
+			"󰁾",
+			"󰂀",
+			"󰁹"
 		]
 	},
 	"battery#bat2": {
@@ -118,7 +124,7 @@
 	"network": {
 		// "interface": "wlp2*", // (Optional) To force the use of this interface
 		"format-alt": "    {essid}",
-		"format-wifi": "  {bandwidthDownBytes}",
+		"format-wifi": " {bandwidthDownBytes}",
 		"format-ethernet": "{ipaddr}/{cidr} ",
 		"tooltip": false,
 		"format-linked": "{ifname} (No IP) ",
@@ -129,16 +135,17 @@
 		// "scroll-step": 1, // %, can be a float
 		"format": "{icon}",
 		"tooltip-format": "{volume}%",
-		"format-bluetooth": "{volume}% {icon} {format_source}",
+		"format-bluetooth": "{volume}% {icon}",
 		"format-bluetooth-muted": " {icon} {format_source}",
+                // "format-bluetooth-connected-battery": " {device_alias} {device_battery_percentage}%",
 		"format-muted": "",
-		"format-source": "{volume}% ",
-		"format-source-muted": "",
+		"format-source": "{volume}% ",
+		"format-source-muted": "",
 		"format-alt": "{format_source}",
 		"format-icons": {
 			"headphone": "",
-			"hands-free": "",
-			"headset": "",
+			"hands-free": "󰋍",
+			"headset": "󰋎",
 			"phone": "",
 			"portable": "",
 			"car": "",
@@ -171,7 +178,7 @@
         },
 	"custom/notification": {
 		"tooltip": false,
-		"format": "{0}  {icon}",
+		"format": "{0} {icon}",
 		"format-icons": {
 			"notification": "󱅫",
 			"none": "",

@@ -14,14 +14,17 @@ map("n", "<C-u>", "<C-u>zz")
 map("n", "n", "nzzzv")                       -- center screen when looping search results
 map("n", "N", "Nzzzv")
 
+-- Move around in insert mode easily
+map("i", "<C-l>", "<Right>")
+map("i", "<C-h>", "<Left>")
 
 -- paste and don't replace clipboard over deleted text
 map("x", "<leader>p", [["_dP]])
 map({ "n", "v" }, "<leader>d", [["_d]])
 
 -- Replace all instances
-map("n", "<leader>s", ":%s//<Left><Left>")                -- entire file
-map({ "n", "v" }, "<leader>ss", ":s/\\%V//g<Left><Left>") -- in-line only
+map("n", "<leader>s", ":%s///gc<Left><Left><Left><Left>")                -- entire file
+map({ "n", "v" }, "<leader>ss", ":s///g<Left><Left><Left>") -- in-line only
 
 --- Easy close and save
 map("n", "<leader>w", ":w<CR>")

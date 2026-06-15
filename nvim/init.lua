@@ -12,7 +12,6 @@ require('config.lsp')
 -- Installing lazy
 require("config.lazy")
 
-
 -- Configuring treesitter
 -- require("lazy").setup({
 --  {"nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate"}
